@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/smallmonk/reactMultiply/static/css/main.d8017e55.chunk.css",
+    "main.js": "/smallmonk/reactMultiply/static/js/main.8e1d3c79.chunk.js",
+    "main.js.map": "/smallmonk/reactMultiply/static/js/main.8e1d3c79.chunk.js.map",
+    "runtime-main.js": "/smallmonk/reactMultiply/static/js/runtime-main.ef7d8fce.js",
+    "runtime-main.js.map": "/smallmonk/reactMultiply/static/js/runtime-main.ef7d8fce.js.map",
+    "static/js/2.9e769e9f.chunk.js": "/smallmonk/reactMultiply/static/js/2.9e769e9f.chunk.js",
+    "static/js/2.9e769e9f.chunk.js.map": "/smallmonk/reactMultiply/static/js/2.9e769e9f.chunk.js.map",
+    "index.html": "/smallmonk/reactMultiply/index.html",
+    "static/css/main.d8017e55.chunk.css.map": "/smallmonk/reactMultiply/static/css/main.d8017e55.chunk.css.map",
+    "static/js/2.9e769e9f.chunk.js.LICENSE.txt": "/smallmonk/reactMultiply/static/js/2.9e769e9f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef7d8fce.js",
+    "static/js/2.9e769e9f.chunk.js",
+    "static/css/main.d8017e55.chunk.css",
+    "static/js/main.8e1d3c79.chunk.js"
+  ]
+}
