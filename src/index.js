@@ -10,6 +10,14 @@ function Square(props) {
     );
 }
 
+function TapButton(props) {
+  return (
+    <button className="tapbutton" onClick={props.onClick}>
+      {props.value}
+    </button>
+  )
+}
+
 function StaticText(props) {
   return (
     <span className="statictext">
@@ -34,7 +42,7 @@ class Board extends React.Component {
     this.state = {
       squares: Array(9).fill(null),
       xIsNext: true,
-      firstNums: Array(12).fill(5),
+      firstNum: 5,
       secondNums: Array(12).fill(null),
       resultCheck: Array(12).fill(null),
     };
@@ -56,9 +64,47 @@ class Board extends React.Component {
     });
   }
 
+  handlePrevNum() {
+    var firstNum = this.state.firstNum - 1
+    if (firstNum < 1) {
+      firstNum = 1
+    }
+    this.setState({
+      firstNum: firstNum
+    })
+  }
+
+  renderPrevNum() {
+    return (
+      <TapButton
+        value="Prev Number"
+        onClick={() => this.handlePrevNum()}
+      />
+    )
+  }
+
+  handleNextNum() {
+    var firstNum = this.state.firstNum + 1
+    if (firstNum > 12) {
+      firstNum = 12
+    }
+    this.setState({
+      firstNum: firstNum
+    })
+  }
+
+  renderNextNum() {
+    return (
+      <TapButton
+        value="Next Number"
+        onClick={() => this.handleNextNum()}
+      />
+    )
+  }
+
   handleTextChange(i, evt) {
     const resultCheck = this.state.resultCheck.slice()
-    resultCheck[i] = verifyResult(this.state.firstNums[i], this.state.secondNums[i], evt.target.value)
+    resultCheck[i] = verifyResult(this.state.firstNum, this.state.secondNums[i], evt.target.value)
     this.setState({
       resultCheck: resultCheck
     })
@@ -67,7 +113,7 @@ class Board extends React.Component {
   renderFirstNum(i) {
     return (
       <StaticText
-      value={this.state.firstNums[i]}
+      value={this.state.firstNum}
       />
     )
   }
@@ -167,7 +213,11 @@ class Board extends React.Component {
 
     return (
       <div>
-        <div className="status">Multiplication</div>
+        <div className="status">Multiplication Exercise of {this.state.firstNum} </div>
+        <div className="status">
+          {this.renderPrevNum()}
+          {this.renderNextNum()}
+        </div>
         <form>
           {grid}
         </form>
