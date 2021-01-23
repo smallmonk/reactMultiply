@@ -65,12 +65,17 @@ class Board extends React.Component {
   }
 
   handlePrevNum() {
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
+
     var firstNum = this.state.firstNum - 1
     if (firstNum < 1) {
       firstNum = 1
     }
     this.setState({
-      firstNum: firstNum
+      firstNum: firstNum,
+      resultCheck: Array(12).fill(null),
     })
   }
 
@@ -84,12 +89,17 @@ class Board extends React.Component {
   }
 
   handleNextNum() {
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
+    
     var firstNum = this.state.firstNum + 1
     if (firstNum > 12) {
       firstNum = 12
     }
     this.setState({
-      firstNum: firstNum
+      firstNum: firstNum,
+      resultCheck: Array(12).fill(null),
     })
   }
 
