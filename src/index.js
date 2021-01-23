@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Helmet} from "react-helmet";
 import './index.css';
 
 function Square(props) {
@@ -240,6 +241,10 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Multiplication Exercise</title>
+        </Helmet>
         <div className="game-board">
           <Board />
         </div>
