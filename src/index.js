@@ -30,7 +30,7 @@ function InputText(props) {
   return (
     <input className="inputtext"
       type="number"
-      onChange={evt => props.onChange(evt)}
+      onBlur={evt => props.onChange(evt)}
       >
     </input>
   )
